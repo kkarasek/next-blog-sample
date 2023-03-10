@@ -27,10 +27,7 @@ export const Home = ({ allPostsData }) => {
 				<p>
 					✨ Hey, I'm Kuba and I'm a fullstack developer with creative flair!
 				</p>
-				<p>
-					(This is a sample website - you’ll be building a site like this on{' '}
-					<a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
-				</p>
+				<p>This paragraph has been changed for testing a new git branch.</p>
 			</section>
 
 			<section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
