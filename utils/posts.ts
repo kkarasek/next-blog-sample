@@ -6,10 +6,15 @@ import html from 'remark-html';
 
 const postsDirectory = path.join(process.cwd(), 'posts');
 
+type Posts = {
+  id: string;
+  date?: matter.GrayMatterFile<string>
+}[];
+
 export const getSortedPostsData = () => {
 	// readDirSync() returns an array with all the file names or objects in the directory.
 	const fileNames = fs.readdirSync(postsDirectory);
-	const allPostsData = fileNames.map((fileName) => {
+	const allPostsData: Posts = fileNames.map((fileName) => {
 		const id = fileName.replace(/\.md$/, ''); // regex $ - end of input
 
 		const fullPath = path.join(postsDirectory, fileName);

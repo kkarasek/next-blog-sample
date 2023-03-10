@@ -1,5 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
+import { GetStaticProps, GetStaticPaths } from 'next';
 
 import Layout from '../../components/layout';
 import Date from '../../components/date';
@@ -7,7 +8,7 @@ import { getPostData, getAllPostIds } from '../../utils/posts';
 
 import utilStyles from '../../styles/utils.module.css';
 
-export const getStaticPaths = async () => {
+export const getStaticPaths: GetStaticPaths = async () => {
 	const paths = getAllPostIds();
 	return {
 		paths,
@@ -15,7 +16,7 @@ export const getStaticPaths = async () => {
 	};
 };
 
-export const getStaticProps = async (context) => {
+export const getStaticProps: GetStaticProps = async (context) => {
 	const postData = await getPostData(context.params.id);
 	return {
 		props: {
