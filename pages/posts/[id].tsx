@@ -4,7 +4,7 @@ import { GetStaticProps, GetStaticPaths } from 'next';
 
 import Layout from '../../components/layout';
 import Date from '../../components/date';
-import { getPostData, getAllPostIds } from '../../utils/posts';
+import { getPostData, getAllPostIds } from '../../lib/posts';
 
 import utilStyles from '../../styles/utils.module.css';
 
